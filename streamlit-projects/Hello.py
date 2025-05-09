@@ -69,6 +69,21 @@ genre = st.radio(
 )
 
 if genre == "***Drama***":
-    st.write("You selected Drama.")
+    st.success("You selected Drama.")
 else:
     st.write("You didn't select Drama.")
+
+
+status = st.radio("Select gender: :", ('Male', 'female'))
+if status == 'Male':
+    st.success("Male")
+else :
+    st.success("Female")
+
+
+def square(num):
+    return num * num
+
+num = st.number_input('insert a number')
+if(st.button("Calcuate Square")):
+    st.text(square(num))
