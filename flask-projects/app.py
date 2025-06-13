@@ -12,12 +12,11 @@ def hello_world():
 def hello():
     return 'Hello, this is a Flask route!'
 
-if __name__ == '__main__':
-    app.run(debug=True) 
+
 
 @app.route('/hello/<name>')
 def hello_name(name):
-    return f'Hello, {name}! This is a Flask route with a parameter.'
+    return f"Hello, {name}! This is a Flask route with a parameter."
 
 @app.route("/aboutus", methods=["GET"])
 def aboutus():
@@ -57,3 +56,6 @@ def prediction():
         pred = "Approved"
 
     return {"loan_approval_status": pred}
+
+if __name__ == '__main__':
+    app.run(debug=True) 
