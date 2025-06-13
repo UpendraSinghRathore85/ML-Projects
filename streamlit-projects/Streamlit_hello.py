@@ -2,19 +2,18 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+st.title ("this is the heading !!!")
+st.write(
+    """
+    # My first app. 
+    # This is very nice to code
 
+    Hello **world!** 
 
-st.title("This is a title")
-st.header("_Streamlit_ is :blue[cool] :sunglasses:")
+    ## Welcome Upendra to the Streamlit..
 
-st.title("Upendra is the best..")
-
-st.write("""
-
-# My first app
-Hello **world!**
-
-""")
+    """
+)
 
 st.header("Charting", divider=True)
 chart_data = pd.DataFrame(
@@ -22,9 +21,6 @@ chart_data = pd.DataFrame(
     columns=['a', 'b','c']
 )
 st.line_chart(chart_data)
-
-st.header("button", divider=True)
-st.button("Reset", type="primary")
 
 st.header("checkbox", divider=True)
 agree = st.checkbox("I agree")
@@ -34,6 +30,8 @@ if agree:
 donotagree = st.checkbox("I dont agree")
 if donotagree:
     st.write("ok fine !")
+
+
 
 col1, col2, col3= st.columns(3)
 # Add checkboxes to separate columns
@@ -45,7 +43,7 @@ with col2:
 
 with col3:
     check3 = st.checkbox("Option 3")
-    
+
 
 # Show selected options
 if check1:
@@ -56,8 +54,6 @@ if check2:
 
 if check3:
     st.write("You selected Option 3!")
-
-
 
 st.header("radio", divider=True)
 genre = st.radio(
@@ -76,20 +72,9 @@ else:
     st.write("You didn't select Drama.")
 
 
-status = st.radio("Select gender: :", ('Male', 'female'))
-if status == 'Male':
-    st.success("Male")
-else :
-    st.success("Female")
+def sqr(num):
+    return num*num
 
 
-def square(num):
-    return num * num
-
-num = st.number_input('insert a number')
-if(st.button("Calcuate Square")):
-    st.text(square(num))
-
-st.header("slider", divider=True)
-age = st.slider('How old are you?', 0, 130, 25)
-st.write("I'm ", age, 'years old')
+num = st.number_input("Enter a number", value=0)
+st.write(f"square of number is {sqr(num)}")
